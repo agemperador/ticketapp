@@ -1,0 +1,24 @@
+.sucursal-list {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
+    .sucursal {
+        background-color: #22254b;
+        display: block;
+        padding: 0.8rem;
+        width: 100%;
+        margin-bottom: 0.5rem;
+        color: white;
+        overflow: hidden;
+        .ticketbook {
+            display: block;
+        }
+        .tickets {
+            display: block;
+            font-weight: bold;
+        }
+    }
+}

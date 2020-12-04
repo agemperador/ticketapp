@@ -1,0 +1,122 @@
+{
+    "sucursal": {
+        "id": "id",
+        "admin": "1000001",
+        "status": "open",
+        "location": "en tu casa",
+        "atention": "todo el día",
+        "providers": [{
+                "id": "1000001",
+                "name": "luquitas"
+            },
+            {
+                "id": "2",
+                "name": "luquitas2"
+            },
+            {
+                "id": "3",
+                "name": "luquitas3"
+            },
+            {
+                "id": "4",
+                "name": "luquitas4"
+            }, {
+                "id": "5",
+                "name": "luquitas5"
+            }
+        ],
+        "queues": [{
+                "id": "1",
+                "name": "caja1",
+                "status": "open",
+                "priority": "all",
+                "providers": [{
+                    "id": "1"
+                }],
+                "mensaje": "Venite a DIA"
+            },
+            {
+                "id": "2",
+                "name": "caja2",
+                "status": "open",
+                "priority": "all",
+                "provider": [{
+                    "id": "1"
+                }],
+                "mensaje": "Venite a DIA"
+            }, {
+                "id": "3",
+                "name": "caja3",
+                "status": "open",
+                "priority": "all",
+                "provider": [{
+                    "id": "1"
+                }],
+                "mensaje": "Venite a DIA"
+            }, {
+                "id": "4",
+                "name": "caja4",
+                "status": "closed",
+                "priority": "all",
+                "provider": [],
+                "mensaje": "Venite a DIA"
+            }, {
+                "id": "5",
+                "name": "caja5",
+                "status": "closed",
+                "priority": "all",
+                "provider": [],
+                "mensaje": "Venite a DIA"
+            }
+        ],
+        "ticketbooks": [{
+            "id": "almorzandocontuvieja",
+            "status": "active",
+            "timePurchase": "10/10/2020-5:20UTC",
+            "timeStart": "10/10/2020-10:20UTC",
+            "tickets": [{
+                "id": "1",
+                "idQueue": "1",
+                "owner": null,
+                "historialStatus": [{
+                    "status": "available",
+                    "time": "10/10/2020-10:20UTC"
+                }]
+            }, {
+                "id": "2",
+                "idQueue": "1",
+                "owner": {
+                    "showName": "Leo",
+                    "idUsuario": "2"
+                },
+                "historialStatus": [{
+                    "status": "waiting",
+                    "time": "10/10/2020-20:20UTC"
+                }]
+            }, {
+                "id": "3",
+                "idQueue": "1",
+                "owner": {
+                    "showName": "Empe",
+                    "idUsuario": "3"
+                },
+                "historialStatus": [{
+                        "status": "waiting",
+                        "time": "10/10/2020-19:20UTC"
+                    },
+                    {
+                        "status": "called",
+                        "time": "10/10/2020-19:30UTC"
+                    }
+                ]
+            }, {
+                "id": "4",
+                "idQueue": "1",
+                "historialStatus": [{
+                    "status": "available",
+                    "time": "10/10/2020-10:20UTC"
+                }]
+            }]
+        }]
+    }
+}

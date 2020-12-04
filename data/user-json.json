@@ -1,0 +1,34 @@
+{
+    "user": {
+        "id": "1000001",
+        "name": "Luquitas",
+        "surname": "Turquito",
+        "age": "30",
+        "mail": "luquitinchox30@gmail.com",
+        "password": "hash",
+        "priority": "blinded",
+        "provider": {
+            "admin": true,
+            "sucursales": [{
+                "id": "1",
+                "ticketbooks": [{
+                    "id": "almorzandocontuvieja",
+                    "status": "active",
+                    "tickets": {
+                        "total": 20,
+                        "available": 18,
+                        "waiting": 1,
+                        "called": 1
+                    }
+                }]
+            }]
+        },
+        "client": {
+            "tickets": [{
+                "idTicketbook": "almorzandocontuvieja-1",
+                "idTicket": "1",
+                "status": "waiting"
+            }]
+        }
+    }
+}

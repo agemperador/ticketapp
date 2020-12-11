@@ -8,7 +8,8 @@ import './menu.styles.scss'
 
 const links = [
     {id:1,name:'home',link:'/'},
-    {id:2,name:'Sucursales',link:'/sucursales'}
+    {id:2,name:'Sucursales',link:'/sucursales'},
+    {id:3,name:'Queues',link:'/queues'}
 ]
 
 

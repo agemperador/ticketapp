@@ -1,0 +1,18 @@
+.queueContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    margin: 10px;
+    width: 80%;
+}
+
+.queue {
+    width: 200px;
+    height: 200px;
+    background-color: blueviolet;
+}

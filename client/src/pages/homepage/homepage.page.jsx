@@ -8,6 +8,8 @@ const Homepage = () => {
 
     return(
     <div className='homepage'>
+        <div id="mapid"></div>
+
         <MainDirectory/>
     </div>
     )

@@ -22,6 +22,11 @@ let sucursalSchema = new Schema({
         type: Array,
         required: false,
         default: []
+    },
+    queues: {
+        type: Array,
+        required: false,
+        default: [],
     }
 });
 /* "location": "en tu casa",

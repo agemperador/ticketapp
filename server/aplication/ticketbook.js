@@ -3,7 +3,7 @@ const Ticketbook = require('../models/ticketbook.model');
 const [validStatus, validStatusDic] = require('../config/config')
 
 
-const cortarTicket = async(idTicketbook, res) => {
+const cortarTicket = async(idTicketbook) => {
 
     const ticketbookDB = await Ticketbook.findById(idTicketbook, (err, ticketbookDB) => {
             if (err) return err

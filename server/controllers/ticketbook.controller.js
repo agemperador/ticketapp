@@ -1,16 +1,7 @@
-const express = require('express');
-const app = express();
-const bodyParser = require('body-parser');
-const bcrypt = require('bcrypt');
-const _ = require('underscore');
-const cors = require('cors')
-const mongoose = require('mongoose')
+const app = require('../config/connection')
 
 const { cortarTicket, crearTicketera } = require('../aplication/ticketbook')
 const { getDB } = require('../db-handler.js')
-
-const pathData = 'C:/Users/Agustin/Desktop/Ticketapp/ticketapp/data/data.json'
-
 
 //Models
 const Ticketbook = require('../models/ticketbook.model');
@@ -18,41 +9,10 @@ const Sucursal = require('../models/sucursal.model')
 const Ticket = require('../models/ticket.model')
 
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-app.use(cors())
-
 farmacia = {
     name: "Melisa +",
     isActive: true,
 }
-
-
-
-
-app.get('/sucursales', (req, res) => {
-
-    getDB('Sucursales', {}, data => {
-        res.send({
-            data,
-        })
-
-    });
-});
-
-app.get('/sucursales/:id', (req, res) => {
-
-    const id = req.params.id
-
-    getDB('Sucursales', { 'sucursal.id': id }, data => {
-
-        res.send({
-            data,
-        })
-    });
-});
-
-
 
 app.get('/ticketbooksSucursal/:idSucursal', (req, res) => {
 
@@ -130,37 +90,9 @@ app.get('/ticketbooks', (req, res) => {
 
 
 
-
-
-
-
-app.post('/sucursal', (req, res) => {
-
-
-    let sucursal = new Sucursal({
-        idSucursal: farmacia.name,
-        idProveedor: 'perra'
-    })
-
-    sucursal.save((err, sucursalDB) => {
-        res.send(sucursalDB)
-    })
-
-
-})
-
-
-app.put('/sucursales', (req, res) => {
-
-    console.log('Update');
-});
-
-
-
 app.post('/ticketbook/:id', function(req, res) {
 
     let id = req.params.id;
-
 
     ticketList = new Array
 

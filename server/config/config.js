@@ -11,6 +11,9 @@ const validStatusDic = {
     ANIHILATED: 'anihilated'
 }
 
+
+
+
 module.exports = [
     validStatus,
     validStatusDic

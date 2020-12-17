@@ -11,10 +11,16 @@ export const getData = (path) => api.get(`/${path}`)
 
 export const putData = (path, id) => api.put(path, { idTicketbook: id })
 
+export const postData = (path, data) => {
+    console.log('POST', path)
+    api.post(path, { data })
+}
+
 
 const apis = {
     getData,
-    putData
+    putData,
+    postData,
 }
 
 export default apis;

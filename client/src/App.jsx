@@ -7,6 +7,7 @@ import './App.css';
 import Header from './components/header/header.component';
 import Footer from './components/footer/footer.component';
 import Sucursales from './pages/sucursales/sucursales.page';
+import Queues from './pages/queues/queues.page'
 
 class  App extends React.Component {
   render(){
@@ -17,6 +18,7 @@ class  App extends React.Component {
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route path='/sucursales' component={Sucursales}/>
+          <Route path='/queues' component={Queues}/>
         </Switch>
         <Footer/>
       </div>

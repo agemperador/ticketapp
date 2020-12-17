@@ -1,12 +1,12 @@
 import React from  'react'
+import './button.styles.scss'
 
 
 const Button = ({name})=>{
 
     return(
 
-        <div class='button' >
-            {name}
+        <div className='button' >
         </div>
     )
 }

@@ -18,7 +18,7 @@ const Queue = require('../models/queue.model')
 
 
 
-app.put('/queue', (req, res) => {
+app.put('/', (req, res) => {
 
     console.log('Update');
 });

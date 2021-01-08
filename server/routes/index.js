@@ -4,7 +4,7 @@ const app = express();
 
 app.use(require('../controllers/sucursal.controller'))
 
-//app.use(require('../controllers/ticketbook.controller'));
+app.use(require('../controllers/ticketbook.controller'));
 
 
 

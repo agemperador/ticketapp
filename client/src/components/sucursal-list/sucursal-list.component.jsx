@@ -5,64 +5,46 @@ import apis from '../../axios/sucursales'
 import matu from '../../assets/matu.png'
 
 import './sucursal-list.styles.scss'
-import Button from '../boton/button.component'
 
 
-const SucursalList = () =>{
+const SucursalList = ({refresh}) =>{
     
     const [data,setData] = useState('')
-    const [cutTicket,setCutTicket] = useState('')
-    const endpoint = 'ticket'
-    const id = '5faf3801b849732808f8c0d8'
+    const [fetchAgain, setFetch] =  useState(refresh)
 
 
     useEffect(()=>{
-            apis.getData('ticketbooks')
-            .then( ticketbook =>ticketbook.data.data)
+            console.log(fetchAgain)
+            setFetch(refresh)
+            apis.getData('sucursales')
+            .then( sucursal =>{
+                console.log(sucursal)
+                return sucursal.data.data
+            })
             .then(tbJson => {
-                console.log(tbJson);
                 setData(tbJson)
             })
+            .then(()=>console.log('GET'))
         .catch(error => console.log(error)) 
-    },[])
+    },[setFetch])
 
-
-    const handleEvent = async ()=>{
-        const ticket = await apis.putData('ticket','5faf3801b849732808f8c0d8')
-        .then(data => data.data)
-        .catch(err=>console.log(err))
-        
-        setCutTicket([ticket.ticketStatus,ticket._id])
-    }
+    
+    
     return(
         
     <div className='sucursal-list'>
-            <h1>Lista de tickets Cortados</h1>
-            {
-            cutTicket ? 
-            //////////// TO DO ////////////    
-            //////////// Mostrar "No hay tickets" /////////////
-                <div>
-                <h2>{cutTicket[1]}</h2>
-                <h3>{cutTicket[0]}</h3>
-                </div>
-            : null
+            {refresh? <h1>True</h1> : <h1>False</h1>}
             
-            }
-
             <h1>Lista de sucursales</h1>
-
-            <button onClick={handleEvent}>
-                    Cortar Ticket
-            </button>
             
             {
                 
-                data ? data.map(ticketbook=>
+                data ? data.map(sucursal=>
        
-                        <div className="sucursal" key={ticketbook._id+'item'}>
-                            <span className='sucursal-id' key={ticketbook._id}>
-                                {ticketbook.idSucursal}
+                        <div className="sucursal" key={sucursal._id+'item'}>
+                            <h2>{sucursal.idProveedor}</h2>
+                            <span className='sucursal-id' key={sucursal._id}>
+                                {sucursal.idSucursal}
                             </span>
                             
                             {//TICKETERAS
@@ -70,19 +52,19 @@ const SucursalList = () =>{
                             data.length ? 
                             <>
                                     
-                            <span className='ticketbook' key={ticketbook._id}>
+                            <span className='ticketbook' key={sucursal._id}>
                             
-                                {ticketbook._id}
+                                {sucursal._id}
                                 <p>
-                                    { ticketbook.tickets.length}
+                                    { sucursal.queues.length}
                                 </p>
                             </span>
 
                             {
-                                ticketbook.tickets.length?
-                                    ticketbook.tickets.map(ticket=>
-                                        <span className='tickets' style={{color:`${ticket.ticketStatus==='available'?'white':'red'}`}} key={ticket._id}>
-                                            { ticket.ticketStatus}
+                                sucursal.queues.length?
+                                sucursal.queues.map(queue=>
+                                        <span className='tickets' style={{color:`${queue.status==='0'?'white':'red'}`}} key={queue._id}>
+                                            { `${queue.name} ${queue.status}`}
                                         </span>
                                         ):'.'
                             }

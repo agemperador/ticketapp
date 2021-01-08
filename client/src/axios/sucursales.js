@@ -13,6 +13,7 @@ export const putData = (path, id) => api.put(path, { idTicketbook: id })
 
 export const postData = (path, data) => {
     console.log('POST', path)
+    console.log(data)
     api.post(path, { data })
 }
 

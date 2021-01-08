@@ -27,7 +27,21 @@ let sucursalSchema = new Schema({
         type: Array,
         required: false,
         default: [],
+    },
+    locationText: {
+        type: String,
+        required: false,
+        default: ''
+    },
+    lat: {
+        type: Number,
+        required: false
+    },
+    lon: {
+        type: Number,
+        required: false
     }
+
 });
 /* "location": "en tu casa",
 "atention": "todo el día",

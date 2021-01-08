@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt');
 const _ = require('underscore');
 const cors = require('cors')
 const mongoose = require('mongoose')
+const { getDB } = require('../db-handler.js')
 
 const pathData = 'C:/Users/Agustin/Desktop/Ticketapp/ticketapp/data/data.json'
 
@@ -46,6 +47,7 @@ app.post('/sucursal', (req, res) => {
 
     const idSucursal = data.idSucursal
     const idProveedor = data.idProveedor
+    const locationText = data.locationText
 
 
     let queue1 = new Queue({
@@ -65,6 +67,7 @@ app.post('/sucursal', (req, res) => {
     let sucursal = new Sucursal({
         idSucursal: idSucursal,
         idProveedor: idProveedor,
+        locationText: locationText,
         queues: queueList
     })
 
